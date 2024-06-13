@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.POLIREG = new System.Windows.Forms.RadioButton();
             this.esfera = new System.Windows.Forms.RadioButton();
             this.prisma = new System.Windows.Forms.RadioButton();
             this.irregular = new System.Windows.Forms.RadioButton();
@@ -36,7 +37,6 @@
             this.rectangulo = new System.Windows.Forms.RadioButton();
             this.circulo = new System.Windows.Forms.RadioButton();
             this.triangulo = new System.Windows.Forms.RadioButton();
-            this.poligonoregular = new System.Windows.Forms.RadioButton();
             this.cuadrado = new System.Windows.Forms.RadioButton();
             this.guardar = new System.Windows.Forms.Button();
             this.calcular = new System.Windows.Forms.Button();
@@ -44,17 +44,18 @@
             this.exportar = new System.Windows.Forms.Button();
             this.dibujar = new System.Windows.Forms.Button();
             this.informacion = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DATOS = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.info = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.IMAGEN = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IMAGEN)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.POLIREG);
             this.groupBox1.Controls.Add(this.esfera);
             this.groupBox1.Controls.Add(this.prisma);
             this.groupBox1.Controls.Add(this.irregular);
@@ -62,7 +63,6 @@
             this.groupBox1.Controls.Add(this.rectangulo);
             this.groupBox1.Controls.Add(this.circulo);
             this.groupBox1.Controls.Add(this.triangulo);
-            this.groupBox1.Controls.Add(this.poligonoregular);
             this.groupBox1.Controls.Add(this.cuadrado);
             this.groupBox1.Controls.Add(this.guardar);
             this.groupBox1.Controls.Add(this.calcular);
@@ -70,7 +70,7 @@
             this.groupBox1.Controls.Add(this.exportar);
             this.groupBox1.Controls.Add(this.dibujar);
             this.groupBox1.Controls.Add(this.informacion);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.DATOS);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -79,6 +79,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // POLIREG
+            // 
+            this.POLIREG.AutoSize = true;
+            this.POLIREG.Location = new System.Drawing.Point(128, 77);
+            this.POLIREG.Name = "POLIREG";
+            this.POLIREG.Size = new System.Drawing.Size(136, 17);
+            this.POLIREG.TabIndex = 18;
+            this.POLIREG.TabStop = true;
+            this.POLIREG.Text = "POLIGONO REGULAR";
+            this.POLIREG.UseVisualStyleBackColor = true;
             // 
             // esfera
             // 
@@ -157,17 +168,6 @@
             this.triangulo.Text = "TRIANGULO";
             this.triangulo.UseVisualStyleBackColor = true;
             // 
-            // poligonoregular
-            // 
-            this.poligonoregular.AutoSize = true;
-            this.poligonoregular.Location = new System.Drawing.Point(128, 77);
-            this.poligonoregular.Name = "poligonoregular";
-            this.poligonoregular.Size = new System.Drawing.Size(136, 17);
-            this.poligonoregular.TabIndex = 10;
-            this.poligonoregular.TabStop = true;
-            this.poligonoregular.Text = "POLIGONO REGULAR";
-            this.poligonoregular.UseVisualStyleBackColor = true;
-            // 
             // cuadrado
             // 
             this.cuadrado.AutoSize = true;
@@ -197,6 +197,7 @@
             this.calcular.TabIndex = 7;
             this.calcular.Text = "calcular";
             this.calcular.UseVisualStyleBackColor = true;
+            this.calcular.Click += new System.EventHandler(this.calcular_Click);
             // 
             // lipiar
             // 
@@ -216,6 +217,7 @@
             this.exportar.TabIndex = 5;
             this.exportar.Text = "exportar";
             this.exportar.UseVisualStyleBackColor = true;
+            this.exportar.Click += new System.EventHandler(this.exportar_Click);
             // 
             // dibujar
             // 
@@ -235,13 +237,14 @@
             this.informacion.TabIndex = 3;
             this.informacion.Text = "informacion";
             this.informacion.UseVisualStyleBackColor = true;
+            this.informacion.Click += new System.EventHandler(this.informacion_Click);
             // 
-            // textBox1
+            // DATOS
             // 
-            this.textBox1.Location = new System.Drawing.Point(340, 153);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 20);
-            this.textBox1.TabIndex = 2;
+            this.DATOS.Location = new System.Drawing.Point(340, 153);
+            this.DATOS.Name = "DATOS";
+            this.DATOS.Size = new System.Drawing.Size(249, 20);
+            this.DATOS.TabIndex = 2;
             // 
             // label2
             // 
@@ -271,13 +274,16 @@
             this.info.TabIndex = 1;
             this.info.Text = "";
             // 
-            // pictureBox1
+            // IMAGEN
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 226);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(384, 226);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.IMAGEN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMAGEN.InitialImage = global::fugurasGeo.Properties.Resources.circulo;
+            this.IMAGEN.Location = new System.Drawing.Point(12, 226);
+            this.IMAGEN.Name = "IMAGEN";
+            this.IMAGEN.Size = new System.Drawing.Size(225, 225);
+            this.IMAGEN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IMAGEN.TabIndex = 2;
+            this.IMAGEN.TabStop = false;
             // 
             // Form1
             // 
@@ -285,14 +291,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.IMAGEN);
             this.Controls.Add(this.info);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IMAGEN)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,13 +309,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button dibujar;
         private System.Windows.Forms.Button informacion;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DATOS;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button guardar;
         private System.Windows.Forms.Button calcular;
         private System.Windows.Forms.Button lipiar;
         private System.Windows.Forms.Button exportar;
-        private System.Windows.Forms.RadioButton poligonoregular;
         private System.Windows.Forms.RadioButton cuadrado;
         private System.Windows.Forms.RadioButton esfera;
         private System.Windows.Forms.RadioButton prisma;
@@ -319,7 +324,8 @@
         private System.Windows.Forms.RadioButton circulo;
         private System.Windows.Forms.RadioButton triangulo;
         private System.Windows.Forms.RichTextBox info;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox IMAGEN;
+        private System.Windows.Forms.RadioButton POLIREG;
     }
 }
 

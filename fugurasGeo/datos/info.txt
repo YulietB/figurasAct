@@ -1,0 +1,26 @@
+Datos: 
+
+
+Datos: 
+Area= 
+Perimetro= 
+Volumen, no se calcula en figuras planas 
+
+
+
+Datos: 
+Area= 
+Perimetro= 
+Volumen, no se calcula en figuras planas 
+
+Area= 
+Perimetro= 
+Volumen, no se calcula en figuras planas 
+
+
+
+Datos: Figura seleccionada: Cuadrado, 
+Sus datos son:
+Longitud del lado: 10, 3
+
+
